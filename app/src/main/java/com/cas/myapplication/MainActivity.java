@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         principal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(v.getContext(), DirectorVistaPrincipal.class);
-                //startActivityForResult(intent,0);
+                Intent intent = new Intent(MainActivity.this, directorVistaPrincipal.class);
+                startActivityForResult(intent,0);
             }
         });
     }
