@@ -26,11 +26,8 @@ public class directorVistaPrincipal extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.myToolbar);
         tabLayout= (TabLayout) findViewById(R.id.tablayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
-        Log.i("tab","setSupportActionBar(toolbar);");
         setSupportActionBar(toolbar);
-        Log.i("tab","setupViewPager(viewPager);");
         setupViewPager(viewPager);
-        Log.i("tab","finish");
         tabLayout.setupWithViewPager(viewPager);
     }
 

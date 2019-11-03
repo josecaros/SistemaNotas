@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewPerfil"
+        android:layout_width="60dp"
+        android:layout_height="57dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewNombre"
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textColor="@android:color/background_dark" />
+
+        <TextView
+            android:id="@+id/textViewApellido"
+            android:layout_width="182dp"
+            android:layout_height="wrap_content"
+            android:text="Apellido"
+            android:textColor="@android:color/background_dark" />
+
+        <TextView
+            android:id="@+id/textViewDNI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DNI"
+            android:textColor="@android:color/background_dark" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_ver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:drawable/ic_menu_info_details" />
+
+    <Button
+        android:id="@+id/btn_modficar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:drawable/ic_menu_edit" />
+
+    <Button
+        android:id="@+id/btn_eliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:drawable/ic_menu_delete" />
+
+</LinearLayout>

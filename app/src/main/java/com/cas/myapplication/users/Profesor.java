@@ -8,8 +8,9 @@ public class Profesor {
     String idProfesor;
     String password;
     String direccion;
+    String dni;
 
-    public Profesor(String nombre, String apellidos, String telefono, String correo, String idProfesor, String password, String direccion) {
+    public Profesor(String nombre, String apellidos, String telefono, String correo, String idProfesor, String password, String direccion, String dni) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.telefono = telefono;
@@ -17,6 +18,7 @@ public class Profesor {
         this.idProfesor = idProfesor;
         this.password = password;
         this.direccion = direccion;
+        this.dni=dni;
     }
 
     public String getDireccion() {
@@ -73,5 +75,13 @@ public class Profesor {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 }
