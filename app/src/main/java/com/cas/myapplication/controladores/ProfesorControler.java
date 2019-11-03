@@ -14,7 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProfesorControler {
-    FirebaseDatabase firebaseDatabase;
+
+    private FirebaseDatabase firebaseDatabase;
     private DatabaseReference profesores;
 
     public ProfesorControler(){
@@ -30,7 +31,7 @@ public class ProfesorControler {
     }
 
     public ArrayList<Profesor> getAll(){
-        final List<Profesor> lista = new ArrayList<>();
+        final ArrayList<Profesor> lista = new ArrayList<>();
         profesores.child("Profesor").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -45,7 +46,7 @@ public class ProfesorControler {
             }
         });
 
-        return new ArrayList(lista);
+        return lista;
     }
 
     public void actualizarProfesor(String id, Profesor profe){
@@ -63,5 +64,13 @@ public class ProfesorControler {
 
     public void eliminarProfesor(String id){
         profesores.child("Profesor").child(id).removeValue();
+    }
+
+    public FirebaseDatabase getFirebaseDatabase() {
+        return firebaseDatabase;
+    }
+
+    public DatabaseReference getProfesores() {
+        return profesores;
     }
 }

@@ -11,12 +11,12 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textViewNombre"
-            android:layout_width="97dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nombre"
             android:textColor="@android:color/background_dark" />
@@ -37,24 +37,26 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_ver"
+        android:id="@+id/btn_verRow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@android:drawable/ic_menu_info_details" />
+        android:text="Ver"/>
 
     <Button
-        android:id="@+id/btn_modficar"
+        android:id="@+id/btn_modficarRow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@android:drawable/ic_menu_edit" />
+        android:text="Act"
+        />
 
     <Button
-        android:id="@+id/btn_eliminar"
+        android:id="@+id/btn_eliminarRow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@android:drawable/ic_menu_delete" />
+        android:text="Elim"
+         />
 
 </LinearLayout>
