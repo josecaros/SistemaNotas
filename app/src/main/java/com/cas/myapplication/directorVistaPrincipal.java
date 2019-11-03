@@ -25,10 +25,15 @@ public class directorVistaPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_director_vista_principal);
         toolbar = (Toolbar) findViewById(R.id.myToolbar);
         tabLayout= (TabLayout) findViewById(R.id.tablayout);
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPager = (ViewPager) findViewById(R.id.myViewPager);
+
+        Log.i("tab","toolbar");
         setSupportActionBar(toolbar);
+        Log.i("tab","viewpager");
         setupViewPager(viewPager);
+        Log.i("tab","tablayout");
         tabLayout.setupWithViewPager(viewPager);
+        Log.i("tab","finMetodo");
     }
 
     private void setupViewPager(ViewPager viewPager){

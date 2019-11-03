@@ -21,6 +21,10 @@ public class Profesor {
         this.dni=dni;
     }
 
+    public Profesor(){
+
+    }
+
     public String getDireccion() {
         return direccion;
     }
