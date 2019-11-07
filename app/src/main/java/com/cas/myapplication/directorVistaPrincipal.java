@@ -6,11 +6,11 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TableLayout;
 
 import com.cas.myapplication.fragment.DirectorAlumnoFragment;
 import com.cas.myapplication.fragment.DirectorCursoFragment;
 import com.cas.myapplication.fragment.DirectorProfesorFragment;
+import com.cas.myapplication.resources.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class directorVistaPrincipal extends AppCompatActivity {

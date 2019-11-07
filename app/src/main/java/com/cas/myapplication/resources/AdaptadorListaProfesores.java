@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,33 +49,15 @@ public class AdaptadorListaProfesores extends ArrayAdapter<Profesor>  {
         apellido.setText(profesor.getApellidos());
         TextView dni = (TextView) convertView.findViewById(R.id.textViewDNI);
         dni.setText(profesor.getDni());
-        Button btnInfor = (Button) convertView.findViewById(R.id.btn_verRow);
-        Button btnModificar = (Button) convertView.findViewById(R.id.btn_modficarRow);
-        Button btnEliminar = (Button) convertView.findViewById(R.id.btn_eliminarRow);
+        ImageButton btnInfor = (ImageButton) convertView.findViewById(R.id.btn_verRow);
+        ImageButton btnModificar = (ImageButton) convertView.findViewById(R.id.btn_modficarRow);
+        ImageButton btnEliminar = (ImageButton) convertView.findViewById(R.id.btn_eliminarRow);
 
         btnEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i("dasda", "accion boton");
-                AlertDialog.Builder alert = new AlertDialog.Builder(v.getRootView().getContext());
-                alert.setTitle("Confirmar Eliminacion");
-                alert.setMessage("Deseas eliminar a "+profesor.getNombre()).
-                        setPositiveButton("Si", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                acciones.eliminarProfesor(profesor.getIdProfesor());
-                                Toast.makeText(context.getApplicationContext(), "Item Eliminado", Toast.LENGTH_SHORT);
-                            }
-                        })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(context.getApplicationContext(), "Accion Cancelada", Toast.LENGTH_SHORT);
-                                dialog.dismiss();
-                            }
-                        })
-                        .setCancelable(false)
-                        .show();
+                alerta(profesor, v);
             }
         });
 
@@ -84,7 +67,25 @@ public class AdaptadorListaProfesores extends ArrayAdapter<Profesor>  {
         return convertView;
     }
 
-    public void alerta(final Profesor profesor){
-
+    public void alerta(final Profesor profesor, View v){
+        AlertDialog.Builder alert = new AlertDialog.Builder(v.getRootView().getContext());
+        alert.setTitle("Confirmar Eliminacion");
+        alert.setMessage("Deseas eliminar a "+profesor.getNombre()).
+                setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        acciones.eliminarProfesor(profesor.getIdProfesor());
+                        Toast.makeText(context.getApplicationContext(), "Item Eliminado", Toast.LENGTH_SHORT);
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(context.getApplicationContext(), "Accion Cancelada", Toast.LENGTH_SHORT);
+                        dialog.dismiss();
+                    }
+                })
+                .setCancelable(false)
+                .show();
     }
 }

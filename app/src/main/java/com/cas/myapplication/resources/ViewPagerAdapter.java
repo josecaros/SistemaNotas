@@ -1,4 +1,4 @@
-package com.cas.myapplication;
+package com.cas.myapplication.resources;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
