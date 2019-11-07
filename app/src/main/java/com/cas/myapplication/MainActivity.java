@@ -1,5 +1,6 @@
 package com.cas.myapplication;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,45 +8,56 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.cas.myapplication.controladores.DirectorControler;
+import com.cas.myapplication.resources.RegistrarDirector;
 import com.cas.myapplication.users.Director;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
-    private Button registrar;
-    private EditText nombre;
-    private Button principal;
+    private Button btnLogin, aux;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final DirectorControler direcControl = new DirectorControler();
-        registrar = (Button) findViewById(R.id.button2);
-        nombre = (EditText) findViewById(R.id.editText1);
-        registrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                registraDirector(direcControl);
-            }
-        });
-        principal = (Button) findViewById(R.id.btn_temp);
-        principal.setOnClickListener(new View.OnClickListener() {
+
+        btnLogin = (Button) findViewById(R.id.btn_login);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, directorVistaPrincipal.class);
                 startActivityForResult(intent,0);
             }
         });
+
+        aux = (Button) findViewById(R.id.botonTemporal);
+        aux.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (v.getContext(), RegistrarDirector.class);
+                startActivityForResult(intent, 1);
+            }
+        });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode==0){
+            if(resultCode==100){
 
-    public void registraDirector(DirectorControler directorControler){
-        String nombre= this.nombre.getText().toString();
-        Director nuevo = new Director();
-        nuevo.setNombre(nombre);
-        directorControler.registrarDirector(nuevo);
+            }else if(resultCode==200){
+
+            }
+        }
+        else if(requestCode==1){
+            if(resultCode==100){
+                Toast.makeText(this, "Director Agregado", (Toast.LENGTH_LONG)).show();
+            }else if(resultCode==200){
+                Toast.makeText(this, "Accion Cancelada", (Toast.LENGTH_LONG)).show();
+            }
+        }
 
     }
 }
