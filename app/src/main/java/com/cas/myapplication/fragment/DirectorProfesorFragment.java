@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.cas.myapplication.R;
 import com.cas.myapplication.controladores.ProfesorControler;
+import com.cas.myapplication.resources.ActualizarProfersorDialog;
 import com.cas.myapplication.resources.AdaptadorListaProfesores;
 import com.cas.myapplication.resources.InfoProfesorDialog;
 import com.cas.myapplication.resources.RegistrarProfesor;
@@ -69,8 +70,6 @@ public class DirectorProfesorFragment extends Fragment {
 
         profesores = profesorControler.getAll();
         listarDatos();
-        adapter = new AdaptadorListaProfesores(getContext(), R.id.list_view_profesores, profesores);
-        lista.setAdapter(adapter);
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -93,11 +92,13 @@ public class DirectorProfesorFragment extends Fragment {
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         if(item.getItemId()==R.id.acticonMenuModificar){
-            
+            ActualizarProfersorDialog actualizar  = new ActualizarProfersorDialog(profesores.get(info.position), profesorControler);
+            actualizar.show(getFragmentManager(),"Actualizar");
+            listarDatos();
 
         }else if(item.getItemId() == R.id.acticonMenuDelete){
             Profesor profesor= profesores.get(info.position);
-            alerta(profesor);
+            alertaEliminar(profesor);
         }
 
         return super.onContextItemSelected(item);
@@ -111,6 +112,8 @@ public class DirectorProfesorFragment extends Fragment {
                 for(DataSnapshot objtSnap: dataSnapshot.getChildren()){
                     Profesor aux = objtSnap.getValue(Profesor.class);
                     profesores.add(aux);
+                    adapter = new AdaptadorListaProfesores(getContext(), R.id.list_view_profesores, profesores);
+                    lista.setAdapter(adapter);
                 }
             }
             @Override
@@ -120,7 +123,7 @@ public class DirectorProfesorFragment extends Fragment {
         });
     }
 
-    public void alerta(final Profesor profesor){
+    public void alertaEliminar(final Profesor profesor){
         AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
         alert.setTitle("Confirmar Eliminacion");
         alert.setMessage("Deseas eliminar a "+profesor.getNombre()).
