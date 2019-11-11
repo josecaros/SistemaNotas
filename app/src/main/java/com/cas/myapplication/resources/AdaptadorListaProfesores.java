@@ -49,7 +49,7 @@ public class AdaptadorListaProfesores extends ArrayAdapter<Profesor>  {
         apellido.setText(profesor.getApellidos());
         TextView dni = (TextView) convertView.findViewById(R.id.textViewDNI);
         dni.setText(profesor.getDni());
-        ImageButton btnInfor = (ImageButton) convertView.findViewById(R.id.btn_verRow);
+        /*
         ImageButton btnModificar = (ImageButton) convertView.findViewById(R.id.btn_modficarRow);
         ImageButton btnEliminar = (ImageButton) convertView.findViewById(R.id.btn_eliminarRow);
 
@@ -59,7 +59,7 @@ public class AdaptadorListaProfesores extends ArrayAdapter<Profesor>  {
                 Log.i("dasda", "accion boton");
                 alerta(profesor, v);
             }
-        });
+        });*/
 
 
 

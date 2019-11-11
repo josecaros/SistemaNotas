@@ -1,17 +1,22 @@
 package com.cas.myapplication.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -19,8 +24,8 @@ import android.widget.Toast;
 import com.cas.myapplication.R;
 import com.cas.myapplication.controladores.ProfesorControler;
 import com.cas.myapplication.resources.AdaptadorListaProfesores;
+import com.cas.myapplication.resources.InfoProfesorDialog;
 import com.cas.myapplication.resources.RegistrarProfesor;
-import com.cas.myapplication.users.Director;
 import com.cas.myapplication.users.Profesor;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,17 +33,18 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import static android.app.AlertDialog.*;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class DirectorProfesorFragment extends Fragment {
     ArrayList<Profesor> profesores = new ArrayList<>();
-    ArrayAdapter<Profesor> profesor;
     AdaptadorListaProfesores adapter;
     ListView lista;
     Button btn_añadir;
+    View view;
     private ProfesorControler profesorControler = new ProfesorControler();
-
     public DirectorProfesorFragment() {
         // Required empty public constructor
     }
@@ -48,7 +54,7 @@ public class DirectorProfesorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View vista =inflater.inflate(R.layout.fragment_director_profesor, container, false);
+        final View vista =inflater.inflate(R.layout.fragment_director_profesor, container, false);
         Log.i("tab","PRofesorFragment");
         lista = (ListView) vista.findViewById(R.id.list_view_profesores);
         btn_añadir = (Button) vista.findViewById(R.id.btn_regNuevoProfesor);
@@ -63,8 +69,38 @@ public class DirectorProfesorFragment extends Fragment {
 
         profesores = profesorControler.getAll();
         listarDatos();
-
+        adapter = new AdaptadorListaProfesores(getContext(), R.id.list_view_profesores, profesores);
+        lista.setAdapter(adapter);
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                InfoProfesorDialog info = new InfoProfesorDialog((Profesor)lista.getItemAtPosition(position));
+                info.show(getFragmentManager(), "InfoProfesorDialog");
+            }
+        });
+        registerForContextMenu(lista);
         return vista;
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getActivity().getMenuInflater();
+        inflater.inflate(R.menu.context, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        if(item.getItemId()==R.id.acticonMenuModificar){
+            
+
+        }else if(item.getItemId() == R.id.acticonMenuDelete){
+            Profesor profesor= profesores.get(info.position);
+            alerta(profesor);
+        }
+
+        return super.onContextItemSelected(item);
     }
 
     private void listarDatos(){
@@ -75,17 +111,38 @@ public class DirectorProfesorFragment extends Fragment {
                 for(DataSnapshot objtSnap: dataSnapshot.getChildren()){
                     Profesor aux = objtSnap.getValue(Profesor.class);
                     profesores.add(aux);
-                    adapter = new AdaptadorListaProfesores(getActivity().getApplicationContext(), R.id.list_view_profesores, profesores);
-                    lista.setAdapter(adapter);
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
     }
+
+    public void alerta(final Profesor profesor){
+        AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+        alert.setTitle("Confirmar Eliminacion");
+        alert.setMessage("Deseas eliminar a "+profesor.getNombre()).
+                setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        profesorControler.eliminarProfesor(profesor.getIdProfesor());
+                        Toast.makeText(getActivity(), "Item Eliminado", Toast.LENGTH_SHORT);
+                        adapter.notifyDataSetChanged();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getActivity(), "Accion Cancelada", Toast.LENGTH_SHORT);
+                        dialog.dismiss();
+                    }
+                })
+                .setCancelable(false)
+                .show();
+    }
+
 
 
 
