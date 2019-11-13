@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 import com.cas.myapplication.R;
 import com.cas.myapplication.controladores.ProfesorControler;
-import com.cas.myapplication.users.Profesor;
+import com.cas.myapplication.models.Profesor;
 
 public class RegistrarProfesor extends AppCompatActivity {
     private Button btn_agregar, btn_cancelar;

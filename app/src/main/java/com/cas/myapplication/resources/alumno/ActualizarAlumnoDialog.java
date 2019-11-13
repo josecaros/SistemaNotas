@@ -14,9 +14,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.cas.myapplication.R;
 import com.cas.myapplication.controladores.AlumnoControler;
-import com.cas.myapplication.controladores.ProfesorControler;
-import com.cas.myapplication.users.Alumno;
-import com.cas.myapplication.users.Profesor;
+import com.cas.myapplication.models.Alumno;
 
 public class ActualizarAlumnoDialog extends DialogFragment {
     Alumno alumno;

@@ -1,4 +1,4 @@
-package com.cas.myapplication.users;
+package com.cas.myapplication.models;
 
 public class Alumno {
     String nombre, apellido, idAlumno, edad, padreId;

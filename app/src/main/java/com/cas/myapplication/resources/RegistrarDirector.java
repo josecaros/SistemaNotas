@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 import com.cas.myapplication.R;
 import com.cas.myapplication.controladores.DirectorControler;
-import com.cas.myapplication.users.Director;
+import com.cas.myapplication.models.Director;
 
 public class RegistrarDirector extends AppCompatActivity {
     private Button registrar, cancelar;

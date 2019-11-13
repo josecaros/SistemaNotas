@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 import com.cas.myapplication.R;
 import com.cas.myapplication.controladores.AlumnoControler;
-import com.cas.myapplication.users.Alumno;
+import com.cas.myapplication.models.Alumno;
 
 public class RegistrarAlumno extends AppCompatActivity {
 

@@ -1,24 +1,17 @@
 package com.cas.myapplication.resources.profesor;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
 import com.cas.myapplication.R;
 import com.cas.myapplication.controladores.ProfesorControler;
-import com.cas.myapplication.users.Director;
-import com.cas.myapplication.users.Profesor;
+import com.cas.myapplication.models.Profesor;
 
 import java.util.List;
 

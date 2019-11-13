@@ -13,7 +13,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.cas.myapplication.R;
 import com.cas.myapplication.controladores.ProfesorControler;
-import com.cas.myapplication.users.Profesor;
+import com.cas.myapplication.models.Profesor;
 
 public class ActualizarProfersorDialog extends DialogFragment {
     Profesor profesor;

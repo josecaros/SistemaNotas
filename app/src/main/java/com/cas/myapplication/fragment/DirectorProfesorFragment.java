@@ -23,7 +23,7 @@ import com.cas.myapplication.resources.profesor.ActualizarProfersorDialog;
 import com.cas.myapplication.resources.profesor.AdaptadorListaProfesores;
 import com.cas.myapplication.resources.profesor.InfoProfesorDialog;
 import com.cas.myapplication.resources.profesor.RegistrarProfesor;
-import com.cas.myapplication.users.Profesor;
+import com.cas.myapplication.models.Profesor;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;

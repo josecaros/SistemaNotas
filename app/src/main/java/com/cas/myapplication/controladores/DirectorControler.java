@@ -2,8 +2,7 @@ package com.cas.myapplication.controladores;
 
 import androidx.annotation.NonNull;
 
-import com.cas.myapplication.users.Director;
-import com.google.firebase.FirebaseApp;
+import com.cas.myapplication.models.Director;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

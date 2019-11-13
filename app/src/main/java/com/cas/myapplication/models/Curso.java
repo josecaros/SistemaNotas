@@ -1,4 +1,4 @@
-package com.cas.myapplication.users;
+package com.cas.myapplication.models;
 
 public class Curso {
     String idCurso, nombre, descripcion;
@@ -7,6 +7,9 @@ public class Curso {
         this.idCurso = idCurso;
         this.nombre = nombre;
         this.descripcion = descripcion;
+    }
+    public Curso(){
+
     }
 
     public String getIdCurso() {

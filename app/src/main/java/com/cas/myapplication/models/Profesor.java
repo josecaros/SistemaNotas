@@ -1,4 +1,4 @@
-package com.cas.myapplication.users;
+package com.cas.myapplication.models;
 
 public class Profesor {
     String nombre;

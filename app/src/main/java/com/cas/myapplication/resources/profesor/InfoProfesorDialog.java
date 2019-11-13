@@ -14,9 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 import com.cas.myapplication.R;
-import com.cas.myapplication.users.Profesor;
-
-import org.w3c.dom.Text;
+import com.cas.myapplication.models.Profesor;
 
 public class InfoProfesorDialog extends DialogFragment {
     Profesor profesor;

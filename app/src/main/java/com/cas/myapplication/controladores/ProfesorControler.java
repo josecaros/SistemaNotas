@@ -2,8 +2,7 @@ package com.cas.myapplication.controladores;
 
 import androidx.annotation.NonNull;
 
-import com.cas.myapplication.users.Director;
-import com.cas.myapplication.users.Profesor;
+import com.cas.myapplication.models.Profesor;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -11,7 +10,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ProfesorControler {
 

@@ -14,8 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 import com.cas.myapplication.R;
-import com.cas.myapplication.users.Alumno;
-import com.cas.myapplication.users.Profesor;
+import com.cas.myapplication.models.Alumno;
 
 public class InfoAlumnoDialog extends DialogFragment {
     Alumno alumno;
