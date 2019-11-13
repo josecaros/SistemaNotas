@@ -12,8 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".resources.RegistrarDirector"></activity>
-        <activity android:name=".resources.RegistrarProfesor" />
+        <activity android:name=".resources.alumno.RegistrarAlumno"></activity>
+        <activity android:name=".resources.RegistrarDirector" />
+        <activity android:name=".resources.profesor.RegistrarProfesor" />
         <activity android:name=".directorVistaPrincipal" />
         <activity android:name=".MainActivity">
             <intent-filter>

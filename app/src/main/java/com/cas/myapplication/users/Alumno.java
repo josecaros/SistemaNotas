@@ -11,6 +11,10 @@ public class Alumno {
         this.padreId = padreId;
     }
 
+    public Alumno(){
+
+    }
+
     public String getNombre() {
         return nombre;
     }

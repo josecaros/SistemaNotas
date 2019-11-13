@@ -1,4 +1,4 @@
-package com.cas.myapplication.resources;
+package com.cas.myapplication.resources.alumno;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,15 +14,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 import com.cas.myapplication.R;
+import com.cas.myapplication.users.Alumno;
 import com.cas.myapplication.users.Profesor;
 
-import org.w3c.dom.Text;
+public class InfoAlumnoDialog extends DialogFragment {
+    Alumno alumno;
 
-public class InfoProfesorDialog extends DialogFragment {
-    Profesor profesor;
-
-    public InfoProfesorDialog(Profesor nuevo){
-        profesor=nuevo;
+    public InfoAlumnoDialog(Alumno nuevo){
+        alumno=nuevo;
         Bundle args = new Bundle();
         args.putString("title", "Información");
         setArguments(args);
@@ -31,7 +30,7 @@ public class InfoProfesorDialog extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.infoprofesordialog, container, false);
+        View view = inflater.inflate(R.layout.infoalumnodialog, container, false);
         Button btn_ok = (Button)view.findViewById(R.id.btnViewInfoDialogProf_ok);
 
         getDialog().getWindow().setSoftInputMode(
@@ -44,18 +43,12 @@ public class InfoProfesorDialog extends DialogFragment {
                 dismiss();
             }
         });
-        TextView nombre = view.findViewById(R.id.txtViewInfoDialogNombres);
-        nombre.setText(profesor.getNombre()+" "+ profesor.getApellidos());
-        TextView correo = view.findViewById(R.id.txtViewInfoDialogCorreo);
-        correo.setText(profesor.getCorreo());
-        TextView dni = view.findViewById(R.id.txtViewInfoDialogDNI);
-        dni.setText(profesor.getDni());
-        TextView direccion = view.findViewById(R.id.txtViewInfoDialogDireccion);
-        direccion.setText(profesor.getDireccion());
-        TextView telefono = view.findViewById(R.id.txtViewInfoDialogTelefono);
-        telefono.setText(profesor.getTelefono());
-        TextView password = view.findViewById(R.id.txtViewInfoDialogPassword);
-        password.setText(profesor.getPassword());
+        TextView nombre = view.findViewById(R.id.txtViewInfoDialogNombresAlum);
+        nombre.setText(alumno.getNombre()+" "+ alumno.getApellido());
+        TextView dni = view.findViewById(R.id.txtViewInfoDialogDNIAlum);
+        dni.setText(alumno.getIdAlumno());
+        TextView dniPadre = view.findViewById(R.id.txtViewInfoDialogDNIPadreAlum);
+        dniPadre.setText(alumno.getPadreId());
 
         return view;
     }

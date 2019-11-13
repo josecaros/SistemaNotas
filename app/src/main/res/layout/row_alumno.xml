@@ -20,7 +20,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textViewNombre"
+            android:id="@+id/textViewNombreAlumno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="false"
@@ -30,7 +30,7 @@
             android:textColor="@android:color/background_dark" />
 
         <TextView
-            android:id="@+id/textViewApellido"
+            android:id="@+id/textViewApellidoAlumno"
             android:layout_width="182dp"
             android:layout_height="wrap_content"
             android:text="Apellido"
@@ -40,7 +40,7 @@
             android:focusable="false"/>
 
         <TextView
-            android:id="@+id/textViewDNI"
+            android:id="@+id/textViewDNIAlumno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="DNI"

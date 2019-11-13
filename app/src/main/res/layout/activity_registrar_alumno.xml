@@ -2,17 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".resources.profesor.RegistrarProfesor">
+    tools:context=".resources.alumno.RegistrarAlumno">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/txtVieRegProf_nombre"
+            android:id="@+id/txtVieRegAlum_nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -20,7 +21,7 @@
             android:text="Nombres" />
 
         <EditText
-            android:id="@+id/txtEdiRegProf_nombre"
+            android:id="@+id/txtEdiRegAlum_nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
@@ -35,7 +36,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/txtVieRegProf_apellido"
+            android:id="@+id/txtVieRegAlum_apellido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimaryDark"
@@ -43,7 +44,7 @@
             android:text="Apellidos" />
 
         <EditText
-            android:id="@+id/txtEdiRegProf_apellido"
+            android:id="@+id/txtEdiRegAlum_apellido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
@@ -58,38 +59,15 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/txtVieRegProf_telefono"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_weight="1"
-            android:text="Telefono" />
-
-        <EditText
-            android:id="@+id/txtEdiRegProf_telefono"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/txtVieRegProf_correo"
+            android:id="@+id/txtVieRegAlum_edad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/colorPrimaryDark"
-            android:text="Correo" />
+            android:text="Edad" />
 
         <EditText
-            android:id="@+id/txtEdiRegProf_correo"
+            android:id="@+id/txtEdiRegAlum_edad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
@@ -104,53 +82,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/txtVieRegProf_direccion"
-            android:layout_width="wrap_content"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Dirección" />
-
-        <EditText
-            android:id="@+id/txtEdiRegProf_direccion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/txtVieRegProf_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/colorPrimaryDark"
-            android:text="Contraseña" />
-
-        <EditText
-            android:id="@+id/txtEdiRegProf_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/txtVieRegProf_dni"
+            android:id="@+id/txtVieRegAlum_dni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -158,7 +90,7 @@
             android:textColor="@color/colorPrimaryDark" />
 
         <EditText
-            android:id="@+id/txtEdiRegProf_dni"
+            android:id="@+id/txtEdiRegAlum_dni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
@@ -167,15 +99,40 @@
             android:text="" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtVieRegAlum_dniPadre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="DNI del Padre"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <EditText
+            android:id="@+id/txtEdiRegAlum_dniPadre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="" />
+
+    </LinearLayout>
+
     <Button
-        android:id="@+id/btnRegProf_agregar"
+        android:id="@+id/btnRegAlum_agregar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Registrar" />
 
     <Button
-        android:id="@+id/btnRegProf_cancelar"
+        android:id="@+id/btnRegAlum_cancelar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cancelar" />
+        android:text="Cancelar"/>
+
 </LinearLayout>

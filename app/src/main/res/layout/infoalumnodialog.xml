@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/txtViewInfoDialog1Alum"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Nombres:" />
+
+        <TextView
+            android:id="@+id/txtViewInfoDialogNombresAlum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/txtViewInfoDialog2Alum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DNI:"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/txtViewInfoDialogDNIAlum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/txtViewInfoDialog3Alum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DNI del Padre:"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/txtViewInfoDialogDNIPadreAlum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/btnViewInfoDialogAlum_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aceptar"
+            />
+    </TableRow>
+
+</TableLayout>

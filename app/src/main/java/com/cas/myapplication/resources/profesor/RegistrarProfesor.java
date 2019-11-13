@@ -1,4 +1,4 @@
-package com.cas.myapplication.resources;
+package com.cas.myapplication.resources.profesor;
 
 import androidx.appcompat.app.AppCompatActivity;
 

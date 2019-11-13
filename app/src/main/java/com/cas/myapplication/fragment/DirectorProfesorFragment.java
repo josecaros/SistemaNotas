@@ -4,11 +4,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -20,13 +17,12 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.cas.myapplication.R;
 import com.cas.myapplication.controladores.ProfesorControler;
-import com.cas.myapplication.resources.ActualizarProfersorDialog;
-import com.cas.myapplication.resources.AdaptadorListaProfesores;
-import com.cas.myapplication.resources.InfoProfesorDialog;
-import com.cas.myapplication.resources.RegistrarProfesor;
+import com.cas.myapplication.resources.profesor.ActualizarProfersorDialog;
+import com.cas.myapplication.resources.profesor.AdaptadorListaProfesores;
+import com.cas.myapplication.resources.profesor.InfoProfesorDialog;
+import com.cas.myapplication.resources.profesor.RegistrarProfesor;
 import com.cas.myapplication.users.Profesor;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,7 +30,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import static android.app.AlertDialog.*;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,7 +39,6 @@ public class DirectorProfesorFragment extends Fragment {
     AdaptadorListaProfesores adapter;
     ListView lista;
     Button btn_añadir;
-    View view;
     private ProfesorControler profesorControler = new ProfesorControler();
     public DirectorProfesorFragment() {
         // Required empty public constructor
@@ -85,7 +79,7 @@ public class DirectorProfesorFragment extends Fragment {
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         MenuInflater inflater = getActivity().getMenuInflater();
-        inflater.inflate(R.menu.context, menu);
+        inflater.inflate(R.menu.context_profesor, menu);
     }
 
     @Override
