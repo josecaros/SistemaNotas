@@ -30,7 +30,7 @@ public class InfoAlumnoDialog extends DialogFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.infoalumnodialog, container, false);
-        Button btn_ok = (Button)view.findViewById(R.id.btnViewInfoDialogProf_ok);
+        Button btn_ok = (Button)view.findViewById(R.id.btnViewInfoDialogAlum_ok);
 
         getDialog().getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
