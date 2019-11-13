@@ -22,8 +22,9 @@ public class CursoControler {
     }
 
     public int registrarCurso(Curso curso){
-        curso.setIdCurso(curso.getIdCurso());
-        cursos.child("Curso").child(curso.getIdCurso()).setValue(curso);
+        String id = cursos.push().getKey();
+        curso.setIdCurso(id);
+        cursos.child("Curso").child(id).setValue(curso);
         return 100;
     }
 
@@ -50,6 +51,7 @@ public class CursoControler {
         Curso modificated = new Curso();
         modificated.setIdCurso(id);
         modificated.setDescripcion(curso.getDescripcion());
+        modificated.setNombre(curso.getNombre());
         cursos.child("Curso").child(modificated.getIdCurso()).setValue(modificated);
     }
 

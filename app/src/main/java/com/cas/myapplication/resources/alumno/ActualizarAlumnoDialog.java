@@ -37,10 +37,11 @@ public class ActualizarAlumnoDialog extends DialogFragment {
         final TextView apellido = view.findViewById((R.id.txtEdiChangeAlum_apellido));
         final TextView dniPadre = view.findViewById((R.id.txtEdiChangeAlum_dniPadre));
         final TextView dni = view.findViewById((R.id.txtEdiChangeAlum_dni));
-        final TextView edad = view.findViewById(R.id.txtEdiChangeAl)
+        final TextView edad = view.findViewById(R.id.txtEdiChangeAlum_edad);
         nombre.setText(alumno.getNombre());
         apellido.setText(alumno.getApellido());
         dniPadre.setText(alumno.getPadreId());
+        edad.setText(alumno.getEdad());
         if(!alumno.getIdAlumno().equals("")){
             dni.setText(alumno.getIdAlumno());
             dni.setEnabled(false);
@@ -55,6 +56,7 @@ public class ActualizarAlumnoDialog extends DialogFragment {
                 nuevo.setApellido(apellido.getText().toString());
                 nuevo.setPadreId(dniPadre.getText().toString());
                 nuevo.setIdAlumno(dni.getText().toString());
+                nuevo.setEdad(edad.getText().toString());
 
                 control.actualizarAlumno(alumno.getIdAlumno(),nuevo);
                 getDialog().dismiss();
