@@ -65,7 +65,7 @@ public class DirectorAlumnoFragment extends Fragment {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                InfoProfesorDialog info = new InfoProfesorDialog((Profesor)lista.getItemAtPosition(position));
+                InfoAlumnoDialog info = new InfoAlumnoDialog((Alumno) lista.getItemAtPosition(position));
                 info.show(getFragmentManager(), "InfoProfesorDialog");
             }
         });
