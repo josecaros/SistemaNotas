@@ -21,6 +21,7 @@ import com.cas.myapplication.R;
 import com.cas.myapplication.controladores.AlumnoControler;
 import com.cas.myapplication.resources.alumno.ActualizarAlumnoDialog;
 import com.cas.myapplication.resources.alumno.AdaptadorListaAlumnos;
+import com.cas.myapplication.resources.alumno.InfoAlumnoDialog;
 import com.cas.myapplication.resources.alumno.RegistrarAlumno;
 import com.cas.myapplication.resources.profesor.InfoProfesorDialog;
 import com.cas.myapplication.models.Alumno;
