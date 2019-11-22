@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.cas.myapplication.resources.RegistrarDirector;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnLogin, aux;
+    private Button btnLogin, aux, padre;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 1);
             }
         });
+        padre = (Button) findViewById(R.id.botonPadre);
+        padre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (v.getContext(), padreVistaPrincipal.class);
+                startActivityForResult(intent, 2);
+            }
+        });
     }
 
     @Override
@@ -51,6 +59,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Director Agregado", (Toast.LENGTH_LONG)).show();
             }else if(resultCode==200){
                 Toast.makeText(this, "Accion Cancelada", (Toast.LENGTH_LONG)).show();
+            }
+        }
+        else if(requestCode==2){
+            if(resultCode==100){
+
+            }else if(resultCode==200){
+
             }
         }
 
