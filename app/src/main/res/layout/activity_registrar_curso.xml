@@ -4,8 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="150dp"
+    android:background="#53EC7B"
     android:orientation="vertical"
     tools:context=".resources.cursos.RegistrarCurso">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="REGISTRO CURSO"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,11 +26,14 @@
 
         <TextView
             android:id="@+id/txtVieRegCurs_nombre"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
+            android:paddingLeft="25dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/colorPrimaryDark"
-            android:text="Nombres" />
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="#FFFFFF"
+            android:text="Nombre"/>
 
         <EditText
             android:id="@+id/txtEdiRegCurs_nombre"
@@ -26,8 +41,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:ems="10"
+            android:layout_marginRight="15dp"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""  />
     </LinearLayout>
 
     <LinearLayout
@@ -37,11 +53,14 @@
 
         <TextView
             android:id="@+id/txtVieRegCurs_Descri"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
+            android:paddingLeft="25dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimaryDark"
             android:layout_weight="1"
-            android:text="Descripcion" />
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="#FFFFFF"
+            android:text="Descripción" />
 
         <EditText
             android:id="@+id/txtEdiRegCurso_Descri"
@@ -49,22 +68,43 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:ems="10"
+            android:layout_marginRight="15dp"
             android:inputType="textPersonName"
             android:text="" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnRegCurs_agregar"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
         android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:text="Registrar" />
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/btnRegCurs_cancelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Cancelar" />
+        <Button
+            android:id="@+id/btnRegCurs_agregar"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:text="Registrar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="6dp"
+            android:enabled="true"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#E7997C"/>
+
+        <Button
+            android:id="@+id/btnRegCurs_cancelar"
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="6dp"
+            android:enabled="true"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#E7997C"/>
+
+    </LinearLayout>
 
 </LinearLayout>
