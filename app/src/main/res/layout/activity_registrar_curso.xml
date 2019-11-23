@@ -16,7 +16,7 @@
         android:textStyle="bold"
         android:text="REGISTRO CURSO"
         android:textSize="30dp"
-        android:textColor="@color/white"
+        android:textColor="#996161"
         />
 
     <LinearLayout
@@ -32,7 +32,7 @@
             android:layout_weight="1"
             android:textStyle="bold"
             android:textSize="18dp"
-            android:textColor="#FFFFFF"
+            android:textColor="#996161"
             android:text="Nombre"/>
 
         <EditText
@@ -59,7 +59,7 @@
             android:layout_weight="1"
             android:textStyle="bold"
             android:textSize="18dp"
-            android:textColor="#FFFFFF"
+            android:textColor="#996161"
             android:text="Descripción" />
 
         <EditText

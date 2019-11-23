@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:paddingTop="90dp"
     android:background="#53EC7B"
     tools:context=".resources.alumno.RegistrarAlumno">
@@ -17,7 +16,7 @@
         android:textStyle="bold"
         android:text="REGISTRO ALUMNO"
         android:textSize="30dp"
-        android:textColor="@color/white"
+        android:textColor="#996161"
         />
 
     <LinearLayout
@@ -33,7 +32,7 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:textSize="18dp"
-            android:textColor="#FFFFFF"
+            android:textColor="#996161"
             android:text="Nombres"  />
 
         <EditText
@@ -60,7 +59,7 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:textSize="18dp"
-            android:textColor="#FFFFFF"
+            android:textColor="#996161"
             android:text="Apellidos"  />
 
         <EditText
@@ -87,7 +86,7 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:textSize="18dp"
-            android:textColor="#FFFFFF"
+            android:textColor="#996161"
             android:text="Edad"  />
 
         <EditText
@@ -114,7 +113,7 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:textSize="18dp"
-            android:textColor="#FFFFFF"
+            android:textColor="#996161"
             android:text="DNI"  />
 
         <EditText
@@ -141,7 +140,7 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:textSize="18dp"
-            android:textColor="#FFFFFF"
+            android:textColor="#996161"
             android:text="DNI del Padre"  />
 
         <EditText

@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="75dp"
+    android:background="#53EC7B"
     tools:context=".resources.RegistrarDirector"
     android:orientation="vertical">
+
     <TextView
         android:id="@+id/txt_regisDirector"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="@string/registrarDirector"
-        android:text="@string/registrarDirector"
-        android:textColor="#000000"
-        android:textSize="24dp" />
+        android:textStyle="bold"
+        android:text="REGISTRO DIRECTOR"
+        android:textSize="30dp"
+        android:textColor="#996161" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,19 +25,25 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/txtVieRegProf_nombre"
-            android:layout_width="wrap_content"
+            android:id="@+id/txtVieRegDir_nombre"
+            android:layout_width="120dp"
+            android:paddingLeft="25dp"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_weight="1"
-            android:text="Nombres" />
+            android:textSize="18dp"
+            android:textColor="#996161"
+            android:text="Nombres"/>
 
         <EditText
             android:id="@+id/txtEdiRegDir_nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
+            android:layout_weight="3"
+            android:ems="10"
+            android:layout_marginRight="12dp"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""  />
 
     </LinearLayout>
 
@@ -44,19 +53,25 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/txtVieRegProf_apellido"
-            android:layout_width="wrap_content"
+            android:id="@+id/txtVieRegDir_apellido"
+            android:layout_width="120dp"
+            android:paddingLeft="25dp"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_weight="1"
+            android:textSize="18dp"
+            android:textColor="#996161"
             android:text="Apellidos" />
 
         <EditText
             android:id="@+id/txtEdiRegDir_apellido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
+            android:layout_weight="3"
+            android:ems="10"
+            android:layout_marginRight="12dp"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""  />
     </LinearLayout>
 
     <LinearLayout
@@ -65,19 +80,25 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
+            android:id="@+id/txtVieRegDir_password"
+            android:layout_width="120dp"
+            android:paddingLeft="25dp"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_weight="1"
-            android:text="Contraseña" />
+            android:textSize="18dp"
+            android:textColor="#996161"
+            android:text="Contraseña"/>
 
         <EditText
             android:id="@+id/txtEdiRegDir_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:inputType="textPassword"
-            android:text="" />
+            android:layout_weight="3"
+            android:ems="10"
+            android:layout_marginRight="12dp"
+            android:inputType="textPersonName"
+            android:text=""  />
 
     </LinearLayout>
 
@@ -87,19 +108,25 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+            android:id="@+id/txtVieRegDir_correo"
+            android:layout_width="120dp"
+            android:paddingLeft="25dp"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_weight="1"
-            android:text="Correo" />
+            android:textSize="18dp"
+            android:textColor="#996161"
+            android:text="Correo"/>
 
         <EditText
             android:id="@+id/txtEdiRegDir_correo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
+            android:layout_weight="3"
+            android:ems="10"
+            android:layout_marginRight="12dp"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""  />
     </LinearLayout>
 
     <LinearLayout
@@ -108,19 +135,25 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
+            android:id="@+id/txtVieRegDir_direccion"
+            android:layout_width="120dp"
+            android:paddingLeft="25dp"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_weight="1"
+            android:textSize="18dp"
+            android:textColor="#996161"
             android:text="Dirección" />
 
         <EditText
             android:id="@+id/txtEdiRegDir_direccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
+            android:layout_weight="3"
+            android:ems="10"
+            android:layout_marginRight="12dp"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""  />
     </LinearLayout>
 
     <LinearLayout
@@ -130,32 +163,90 @@
 
         <TextView
             android:id="@+id/txtVieRegDir_telefono"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
+            android:paddingLeft="25dp"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_weight="1"
+            android:textSize="18dp"
+            android:textColor="#996161"
             android:text="Telefono" />
 
         <EditText
             android:id="@+id/txtEdiRegDir_telefono"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:inputType="phone"
-            android:text="" />
+            android:layout_weight="3"
+            android:ems="10"
+            android:layout_marginRight="12dp"
+            android:inputType="textPersonName"
+            android:text=""  />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnRegDir_registrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registrar"
-        android:layout_gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_gravity="center"
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/btnRegDir_cancelar"
-        android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btnRegDir_registrar"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:text="Registrar"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="6dp"
+            android:enabled="true"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#E7997C"/>
+
+        <Button
+            android:id="@+id/btnRegDir_cancelar"
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="6dp"
+            android:textStyle="bold"
+            android:enabled="true"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#E7997C"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="186dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Cancelar" />
+        android:orientation="vertical">
 
+
+        <ImageView
+            android:id="@+id/img_fondoCirca_direct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            app:srcCompat="@drawable/img_circa" />
+
+        <TextView
+            android:id="@+id/txtImgCirca_direct"
+            android:layout_width="203dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="CIRCA - Siempre con Dios"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 </LinearLayout>
