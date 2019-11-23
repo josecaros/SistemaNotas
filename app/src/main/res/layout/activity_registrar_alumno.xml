@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:paddingTop="100dp"
+    android:paddingTop="90dp"
     android:background="#53EC7B"
     tools:context=".resources.alumno.RegistrarAlumno">
 
@@ -163,7 +163,7 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/btnRegAlumno_agregar"
+            android:id="@+id/btnRegAlum_agregar"
             android:layout_width="156dp"
             android:layout_height="wrap_content"
             android:text="Registrar"
@@ -177,7 +177,7 @@
             app:backgroundTint="#E7997C"/>
 
         <Button
-            android:id="@+id/btnRegAlumno_cancelar"
+            android:id="@+id/btnRegAlum_cancelar"
             android:layout_width="152dp"
             android:layout_height="wrap_content"
             android:text="Cancelar"
@@ -192,4 +192,36 @@
 
     </LinearLayout>
 
+
+    <LinearLayout
+        android:layout_width="186dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/img_fondoCirca_alumno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            app:srcCompat="@drawable/img_circa" />
+
+        <TextView
+            android:id="@+id/txtImgCirca_alumno"
+            android:layout_width="203dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="CIRCA - Siempre con Dios"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 </LinearLayout>
