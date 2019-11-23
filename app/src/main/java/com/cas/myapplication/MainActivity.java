@@ -7,12 +7,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cas.myapplication.resources.RegistrarDirector;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnLogin, aux, padre;
+    TextView reg_Director, forgot_Pass;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 2);
             }
         });
+
     }
 
     @Override

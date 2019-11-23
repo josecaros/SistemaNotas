@@ -5,7 +5,20 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:paddingTop="100dp"
+    android:background="#53EC7B"
     tools:context=".resources.alumno.RegistrarAlumno">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="REGISTRO ALUMNO"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,11 +27,14 @@
 
         <TextView
             android:id="@+id/txtVieRegAlum_nombre"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
+            android:paddingLeft="25dp"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_weight="1"
-            android:textColor="@color/colorPrimaryDark"
-            android:text="Nombres" />
+            android:textSize="18dp"
+            android:textColor="#FFFFFF"
+            android:text="Nombres"  />
 
         <EditText
             android:id="@+id/txtEdiRegAlum_nombre"
@@ -26,8 +42,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:ems="10"
+            android:layout_marginRight="12dp"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""  />
     </LinearLayout>
 
     <LinearLayout
@@ -37,11 +54,14 @@
 
         <TextView
             android:id="@+id/txtVieRegAlum_apellido"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
+            android:paddingLeft="25dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:layout_weight="1"
-            android:text="Apellidos" />
+            android:textSize="18dp"
+            android:textColor="#FFFFFF"
+            android:text="Apellidos"  />
 
         <EditText
             android:id="@+id/txtEdiRegAlum_apellido"
@@ -49,8 +69,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:ems="10"
+            android:layout_marginRight="12dp"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""  />
     </LinearLayout>
 
     <LinearLayout
@@ -60,11 +81,14 @@
 
         <TextView
             android:id="@+id/txtVieRegAlum_edad"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
+            android:paddingLeft="25dp"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_weight="1"
-            android:textColor="@color/colorPrimaryDark"
-            android:text="Edad" />
+            android:textSize="18dp"
+            android:textColor="#FFFFFF"
+            android:text="Edad"  />
 
         <EditText
             android:id="@+id/txtEdiRegAlum_edad"
@@ -72,6 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:ems="10"
+            android:layout_marginRight="12dp"
             android:inputType="textPersonName"
             android:text="" />
     </LinearLayout>
@@ -83,11 +108,14 @@
 
         <TextView
             android:id="@+id/txtVieRegAlum_dni"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
+            android:paddingLeft="25dp"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_weight="1"
-            android:text="DNI"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textSize="18dp"
+            android:textColor="#FFFFFF"
+            android:text="DNI"  />
 
         <EditText
             android:id="@+id/txtEdiRegAlum_dni"
@@ -95,6 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:ems="10"
+            android:layout_marginRight="12dp"
             android:inputType="textPersonName"
             android:text="" />
     </LinearLayout>
@@ -106,11 +135,14 @@
 
         <TextView
             android:id="@+id/txtVieRegAlum_dniPadre"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
+            android:paddingLeft="25dp"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_weight="1"
-            android:text="DNI del Padre"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textSize="18dp"
+            android:textColor="#FFFFFF"
+            android:text="DNI del Padre"  />
 
         <EditText
             android:id="@+id/txtEdiRegAlum_dniPadre"
@@ -118,21 +150,46 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:ems="10"
+            android:layout_marginRight="12dp"
             android:inputType="textPersonName"
             android:text="" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnRegAlum_agregar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registrar" />
+        android:layout_height="92dp"
+        android:layout_gravity="center"
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/btnRegAlum_cancelar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cancelar"/>
+        <Button
+            android:id="@+id/btnRegAlumno_agregar"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:text="Registrar"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="6dp"
+            android:enabled="true"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#E7997C"/>
+
+        <Button
+            android:id="@+id/btnRegAlumno_cancelar"
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="6dp"
+            android:textStyle="bold"
+            android:enabled="true"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#E7997C"/>
+
+    </LinearLayout>
 
 </LinearLayout>

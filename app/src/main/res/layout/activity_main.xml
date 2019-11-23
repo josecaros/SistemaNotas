@@ -89,10 +89,10 @@
         app:layout_constraintTop_toBottomOf="@+id/idPass" />
 
     <TextView
-        android:id="@+id/link_to_register"
+        android:id="@+id/link_to_registerDirector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:shadowColor="@color/black"
@@ -123,7 +123,6 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/link_to_register"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
     <Button
@@ -131,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:text="Dejame Este Boton"
+        android:text="Registrar Director"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

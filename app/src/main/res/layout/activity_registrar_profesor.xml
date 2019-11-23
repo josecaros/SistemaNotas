@@ -15,7 +15,7 @@
         android:gravity="center"
         android:textStyle="bold"
         android:text="REGISTRO PROFESOR"
-        android:textSize="23dp"
+        android:textSize="30dp"
         android:textColor="@color/white"
         />
 
@@ -176,7 +176,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:ems="10"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="12dp"
             android:inputType="textPersonName"
             android:text="" />
     </LinearLayout>
