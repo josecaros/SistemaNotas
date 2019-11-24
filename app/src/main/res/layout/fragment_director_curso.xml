@@ -10,14 +10,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="right"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/btn_regNuevoCurso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Registrar Curso" />
+            android:textColor="@color/white"
+            android:text="Registrar"
+            android:background="@drawable/botones_border" />
     </LinearLayout>
 
     <LinearLayout
@@ -34,12 +36,12 @@
             android:inputType="textPersonName"
             android:text="" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_searchCurso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/btn_buscar" />
+            android:src="@android:drawable/ic_search_category_default"/>
 
     </LinearLayout>
 

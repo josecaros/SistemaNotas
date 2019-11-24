@@ -10,14 +10,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="right"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/btn_regNuevoProfesor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_regNuevoProfesor" />
+            android:textColor="@color/white"
+            android:text="Registrar"
+            android:background="@drawable/botones_border"/>
     </LinearLayout>
 
     <LinearLayout
@@ -31,14 +33,14 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/editTextBusqueda" />
+            android:hint="buscar..." />
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="56dp"
             android:layout_weight="1"
-            android:text="@string/btn_buscar" />
+            android:src="@android:drawable/ic_search_category_default" />
 
     </LinearLayout>
 
@@ -50,7 +52,9 @@
         <ListView
             android:id="@+id/list_view_profesores"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:scrollbarStyle="insideInset"
+            />
     </LinearLayout>
 
 </LinearLayout>

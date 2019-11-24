@@ -16,9 +16,9 @@
             android:id="@+id/myToolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
+            android:background="#53cb1b"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tablayout"
@@ -27,7 +27,8 @@
             app:tabIndicatorColor="@android:color/white"
             app:tabIndicatorHeight="2dp"
             app:tabMode="fixed"
-            app:tabGravity="fill"/>
+            app:tabGravity="fill"
+            android:background="#4cbb19"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
