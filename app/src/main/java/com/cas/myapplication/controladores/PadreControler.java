@@ -1,8 +1,5 @@
 package com.cas.myapplication.controladores;
-
 import androidx.annotation.NonNull;
-
-import com.cas.myapplication.models.Alumno;
 import com.cas.myapplication.models.Padre;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -54,7 +51,14 @@ public class PadreControler {
         padres.child("Padre").child(modificated.getIdPadre()).setValue(modificated);
     }
 
-    public void eliminarAlumno(String id){
+    public void eliminarPadre(String id){
         padres.child("Padre").child(id).removeValue();
+    }
+
+    public FirebaseDatabase getFirebaseDatabase() {
+        return firebaseDatabase;
+    }
+    public DatabaseReference getPadres() {
+        return padres;
     }
 }

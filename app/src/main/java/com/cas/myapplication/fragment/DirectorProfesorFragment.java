@@ -50,9 +50,11 @@ public class DirectorProfesorFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View vista =inflater.inflate(R.layout.fragment_director_profesor, container, false);
-        Log.i("tab","PRofesorFragment");
+        Log.i("tab","PRofesorFragmenaaaa");
         lista = (ListView) vista.findViewById(R.id.list_view_profesores);
+        Log.i("tab","PRofesorFragmenaaaa2");
         btn_añadir = (Button) vista.findViewById(R.id.btn_regNuevoProfesor);
+        Log.i("tab","PRofesorFragmenaaaa3");
         btn_añadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +65,7 @@ public class DirectorProfesorFragment extends Fragment {
         });
 
         profesores = profesorControler.getAll();
+        Log.i("tab","PRofesorFragmenaaaa3");
         listarDatos();
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -72,6 +75,7 @@ public class DirectorProfesorFragment extends Fragment {
             }
         });
         registerForContextMenu(lista);
+        Log.i("tab","PRofesorFragmenaaalumnoa3Profesor");
         return vista;
     }
 
@@ -99,6 +103,7 @@ public class DirectorProfesorFragment extends Fragment {
     }
 
     private void listarDatos(){
+        Log.i("tab","PRofesorFragmenaaaa3");
         profesorControler.getProfesores().child("Profesor").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -109,7 +114,9 @@ public class DirectorProfesorFragment extends Fragment {
                     adapter = new AdaptadorListaProfesores(getContext(), R.id.list_view_profesores, profesores);
                     lista.setAdapter(adapter);
                 }
+                Log.i("tab","PRofesorFragmenaaaa3ssssProfesor");
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 

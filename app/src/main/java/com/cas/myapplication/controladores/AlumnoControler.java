@@ -3,6 +3,7 @@ package com.cas.myapplication.controladores;
 import androidx.annotation.NonNull;
 
 import com.cas.myapplication.models.Alumno;
+import com.cas.myapplication.models.Padre;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,6 +24,13 @@ public class AlumnoControler {
 
     public int registrarAlumno(Alumno alumno){
         alumnos.child("Alumno").child(alumno.getIdAlumno()).setValue(alumno);
+        return 100;
+    }
+
+    public int registrarPadreAlumno(String id){
+        Padre padre = new Padre();
+        padre.setIdPadre(id);
+        alumnos.child("Padre").child(id).setValue(padre);
         return 100;
     }
 

@@ -32,9 +32,8 @@ public class RegistrarAlumno extends AppCompatActivity {
                 alumno.setEdad(edad.getText().toString());
                 alumno.setIdAlumno(idDNI.getText().toString());
                 alumno.setPadreId(dniIDPadre.getText().toString());
-
                 controler.registrarAlumno(alumno);
-
+                controler.registrarPadreAlumno(alumno.getPadreId());
                 Intent intent = new Intent();
                 intent.putExtra("MESSAGE", "MESSAGE");
                 setResult(100,intent);
@@ -60,7 +59,4 @@ public class RegistrarAlumno extends AppCompatActivity {
         edad = (EditText) findViewById(R.id.txtEdiRegAlum_edad);
     }
 
-    private void registroPadre(){
-
-    }
 }

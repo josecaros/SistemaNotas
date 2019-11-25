@@ -5,8 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".fragment.DirectorProfesorFragment">
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,9 +50,7 @@
         <ListView
             android:id="@+id/list_view_profesores"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbarStyle="insideInset"
-            />
+            android:layout_height="match_parent"/>
     </LinearLayout>
 
 </LinearLayout>

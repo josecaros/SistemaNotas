@@ -9,134 +9,144 @@
     android:orientation="vertical"
     tools:context=".resources.cursos.RegistrarCurso">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:text="REGISTRO CURSO"
-        android:textSize="30dp"
-        android:textColor="#996161"
-        />
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="REGISTRO CURSO"
+                android:textSize="30dp"
+                android:textColor="#996161"
+                />
 
-        <TextView
-            android:id="@+id/txtVieRegCurs_nombre"
-            android:layout_width="100dp"
-            android:paddingLeft="25dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:textColor="#996161"
-            android:text="Nombre"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/txtEdiRegCurs_nombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:ems="10"
-            android:layout_marginRight="15dp"
-            android:inputType="textPersonName"
-            android:text=""  />
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/txtVieRegCurs_nombre"
+                    android:layout_width="100dp"
+                    android:paddingLeft="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:textColor="#996161"
+                    android:text="Nombre"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/txtEdiRegCurs_nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:ems="10"
+                    android:layout_marginRight="15dp"
+                    android:inputType="textPersonName"
+                    android:text=""  />
+            </LinearLayout>
 
-        <TextView
-            android:id="@+id/txtVieRegCurs_Descri"
-            android:layout_width="100dp"
-            android:paddingLeft="25dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:textColor="#996161"
-            android:text="Descripción" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/txtEdiRegCurso_Descri"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:ems="10"
-            android:layout_marginRight="15dp"
-            android:inputType="textPersonName"
-            android:text="" />
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/txtVieRegCurs_Descri"
+                    android:layout_width="100dp"
+                    android:paddingLeft="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:textColor="#996161"
+                    android:text="Descripción" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:layout_gravity="center"
-        android:gravity="center">
+                <EditText
+                    android:id="@+id/txtEdiRegCurso_Descri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:ems="10"
+                    android:layout_marginRight="15dp"
+                    android:inputType="textPersonName"
+                    android:text="" />
+            </LinearLayout>
 
-        <Button
-            android:id="@+id/btnRegCurs_agregar"
-            android:layout_width="156dp"
-            android:layout_height="wrap_content"
-            android:text="Registrar"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:drawablePadding="6dp"
-            android:enabled="true"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            app:backgroundTint="#E7997C"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="92dp"
+                android:layout_gravity="center"
+                android:gravity="center">
 
-        <Button
-            android:id="@+id/btnRegCurs_cancelar"
-            android:layout_width="152dp"
-            android:layout_height="wrap_content"
-            android:text="Cancelar"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:drawablePadding="6dp"
-            android:enabled="true"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            app:backgroundTint="#E7997C"/>
+                <Button
+                    android:id="@+id/btnRegCurs_agregar"
+                    android:layout_width="156dp"
+                    android:layout_height="wrap_content"
+                    android:text="Registrar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="6dp"
+                    android:enabled="true"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    app:backgroundTint="#E7997C"/>
 
-    </LinearLayout>
+                <Button
+                    android:id="@+id/btnRegCurs_cancelar"
+                    android:layout_width="152dp"
+                    android:layout_height="wrap_content"
+                    android:text="Cancelar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="6dp"
+                    android:enabled="true"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    app:backgroundTint="#E7997C"/>
 
-    <LinearLayout
-        android:layout_width="186dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical">
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="186dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
 
-        <ImageView
-            android:id="@+id/img_fondoCirca_curso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:paddingTop="70dp"
-            app:srcCompat="@drawable/img_circa" />
+                <ImageView
+                    android:id="@+id/img_fondoCirca_curso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="70dp"
+                    app:srcCompat="@drawable/img_circa" />
 
-        <TextView
-            android:id="@+id/txtImgCirca_curso"
-            android:layout_width="203dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:paddingTop="10dp"
-            android:text="CIRCA - Siempre con Dios"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="24dp"
-            android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/txtImgCirca_curso"
+                    android:layout_width="203dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:text="CIRCA - Siempre con Dios"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
 
-    </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
