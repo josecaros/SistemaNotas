@@ -3,6 +3,17 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/txtViewTituloModifAlumno"
+        android:layout_width="190dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:text="Modificar Alumno" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,8 +24,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/colorPrimaryDark"
-            android:text="Nombres" />
+            android:paddingLeft="15dp"
+            android:text="Nombres"
+            android:textColor="@color/colorPrimaryDark" />
 
         <EditText
             android:id="@+id/txtEdiChangeAlum_nombre"
@@ -35,6 +47,7 @@
             android:id="@+id/txtVieChangeAlum_apellido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
             android:textColor="@color/colorPrimaryDark"
             android:layout_weight="1"
             android:text="Apellidos" />
@@ -55,11 +68,12 @@
 
         <TextView
             android:id="@+id/txtVieChangeAlum_edad"
-            android:layout_width="wrap_content"
+            android:layout_width="72dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimaryDark"
             android:layout_weight="1"
-            android:text="Edad" />
+            android:paddingLeft="15dp"
+            android:text="Edad"
+            android:textColor="@color/colorPrimaryDark" />
 
         <EditText
             android:id="@+id/txtEdiChangeAlum_edad"
@@ -80,6 +94,7 @@
             android:id="@+id/txtVieChangeAlum_dniPadre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
             android:textColor="@color/colorPrimaryDark"
             android:layout_weight="1"
             android:text="DNI del Padre" />
@@ -105,6 +120,7 @@
             android:id="@+id/txtVieChangeAlum_dni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
             android:layout_weight="1"
             android:text="DNI"
             android:textColor="@color/colorPrimaryDark" />
@@ -119,16 +135,38 @@
             android:text="" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnChangeAlum_ok"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registrar" />
+        android:layout_height="92dp"
+        android:layout_gravity="center"
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/btnChangeAlum_cancelar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cancelar" />
+        <Button
+            android:id="@+id/btnChangeAlum_ok"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:text="Registrar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="6dp"
+            android:enabled="true"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#E7997C"/>
+
+        <Button
+            android:id="@+id/btnChangeAlum_cancelar"
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="6dp"
+            android:enabled="true"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#E7997C"/>
+
+    </LinearLayout>
 
 </LinearLayout>
