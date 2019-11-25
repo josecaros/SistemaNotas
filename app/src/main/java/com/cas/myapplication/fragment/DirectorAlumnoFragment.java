@@ -40,13 +40,9 @@ public class DirectorAlumnoFragment extends Fragment {
     ListView lista;
     Button btn_añadir;
     private AlumnoControler alumnoControler = new AlumnoControler();
-
-
     public DirectorAlumnoFragment() {
         // Required empty public constructor
     }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -62,6 +58,7 @@ public class DirectorAlumnoFragment extends Fragment {
             }
         });
         alumnos = alumnoControler.getAll();
+        Log.i("tab","PRofesorFragmenaaalumnoa3");
         listarDatos();
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -70,7 +67,9 @@ public class DirectorAlumnoFragment extends Fragment {
                 info.show(getFragmentManager(), "InfoProfesorDialog");
             }
         });
+        Log.i("tab","PRofesorFragmenaaalumnoa323Alumno");
         registerForContextMenu(lista);
+        Log.i("tab","PRofesorFragmenaaalumnoa234");
         return vista;
     }
 
@@ -109,6 +108,7 @@ public class DirectorAlumnoFragment extends Fragment {
                     adapter = new AdaptadorListaAlumnos(getContext(), R.id.list_view_alumnos, alumnos);
                     lista.setAdapter(adapter);
                 }
+                Log.i("tab","PRofesorFragmenaaaa3ssssAlumno");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

@@ -17,7 +17,7 @@
         <activity android:name=".resources.cursos.RegistrarCurso" />
         <activity android:name=".resources.alumno.RegistrarAlumno" />
         <activity android:name=".resources.RegistrarDirector" />
-        <activity android:name=".resources.profesor.RegistrarProfesor" />
+        <activity android:windowSoftInputMode="stateVisible|adjustResize" android:name=".resources.profesor.RegistrarProfesor" />
         <activity android:name=".directorVistaPrincipal" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -44,18 +44,14 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class DirectorCursoFragment extends Fragment {
-
-
-    public DirectorCursoFragment() {
-        // Required empty public constructor
-    }
-
     ArrayList<Curso> cursos = new ArrayList<>();
     AdaptadorListaCursos adapter;
     ListView lista;
     Button btn_añadir;
     private CursoControler cursoControler = new CursoControler();
-
+    public DirectorCursoFragment() {
+        // Required empty public constructor
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -63,6 +59,7 @@ public class DirectorCursoFragment extends Fragment {
         // Inflate the layout for this fragment
         final View vista =inflater.inflate(R.layout.fragment_director_curso, container, false);
         //
+        Log.i("tab","PRofesorFragmenaaalumnoa3Curso");
         lista = (ListView) vista.findViewById(R.id.list_view_cursos);
         btn_añadir = (Button) vista.findViewById(R.id.btn_regNuevoCurso);
         btn_añadir.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +80,7 @@ public class DirectorCursoFragment extends Fragment {
                 info.show(getFragmentManager(), "InfoCursoDialog");
             }
         });
+        Log.i("tab","PRofesorFragmenaaalumnoa3Curso");
         registerForContextMenu(lista);
         return vista;
     }

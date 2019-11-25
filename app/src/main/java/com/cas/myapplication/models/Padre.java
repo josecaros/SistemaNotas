@@ -1,15 +1,15 @@
 package com.cas.myapplication.models;
 
 public class Padre {
-    String idPadre, nombre, apellido, telefono, direccion;
+    String idPadre, nombre, apellido, telefono;
 
     public Padre(String idPadre, String nombre, String apellido, String telefono, String direccion) {
         this.idPadre = idPadre;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
-        this.direccion = direccion;
     }
+    public Padre(){}
 
     public String getIdPadre() {
         return idPadre;
@@ -43,11 +43,4 @@ public class Padre {
         this.telefono = telefono;
     }
 
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
 }
