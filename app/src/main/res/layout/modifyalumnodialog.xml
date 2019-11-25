@@ -118,16 +118,16 @@
 
         <TextView
             android:id="@+id/txtVieChangeAlum_dni"
-            android:layout_width="wrap_content"
+            android:layout_width="107dp"
             android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
             android:layout_weight="1"
+            android:paddingLeft="15dp"
             android:text="DNI"
             android:textColor="@color/colorPrimaryDark" />
 
         <EditText
             android:id="@+id/txtEdiChangeAlum_dni"
-            android:layout_width="wrap_content"
+            android:layout_width="308dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:ems="10"
@@ -145,14 +145,14 @@
             android:id="@+id/btnChangeAlum_ok"
             android:layout_width="156dp"
             android:layout_height="wrap_content"
-            android:text="Registrar"
+            android:text="Modificar"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:drawablePadding="6dp"
             android:enabled="true"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
-            app:backgroundTint="#E7997C"/>
+            android:textColor="@android:color/black"
+            />
 
         <Button
             android:id="@+id/btnChangeAlum_cancelar"
@@ -164,8 +164,8 @@
             android:drawablePadding="6dp"
             android:enabled="true"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
-            app:backgroundTint="#E7997C"/>
+            android:textColor="@android:color/black"
+            />
 
     </LinearLayout>
 
