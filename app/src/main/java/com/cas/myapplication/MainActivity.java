@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         aux.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), RegistrarDirector.class);
+                Intent intent = new Intent (v.getContext(), profesorVistaPrincipal.class);
                 startActivityForResult(intent, 1);
             }
         });

@@ -12,12 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".padreVistaHijo"></activity>
+        <activity android:name=".resources.profesor.ProfesorMatricularAlumno" />
+        <activity android:name=".profesorVistaPrincipal" />
+        <activity android:name=".padreVistaHijo" />
         <activity android:name=".padreVistaPrincipal" />
         <activity android:name=".resources.cursos.RegistrarCurso" />
         <activity android:name=".resources.alumno.RegistrarAlumno" />
         <activity android:name=".resources.RegistrarDirector" />
-        <activity android:windowSoftInputMode="stateVisible|adjustResize" android:name=".resources.profesor.RegistrarProfesor" />
+        <activity
+            android:name=".resources.profesor.RegistrarProfesor"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity android:name=".directorVistaPrincipal" />
         <activity android:name=".MainActivity">
             <intent-filter>

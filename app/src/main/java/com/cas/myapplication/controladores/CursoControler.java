@@ -30,7 +30,7 @@ public class CursoControler {
 
     public ArrayList<Curso> getAll(){
         final ArrayList<Curso> lista = new ArrayList<>();
-        cursos.child("Curso").addValueEventListener(new ValueEventListener() {
+        cursos.child("Curso").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot objSS: dataSnapshot.getChildren()){

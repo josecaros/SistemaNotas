@@ -36,7 +36,7 @@ public class AlumnoControler {
 
     public ArrayList<Alumno> getAll(){
         final ArrayList<Alumno> lista = new ArrayList<>();
-        alumnos.child("Alumno").addValueEventListener(new ValueEventListener() {
+        alumnos.child("Alumno").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot objSS: dataSnapshot.getChildren()){
