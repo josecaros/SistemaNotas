@@ -5,8 +5,17 @@
     android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="#A8D4FA"
     android:layout_gravity="center">
 
+    <TextView
+        android:id="@+id/txtViewTituloInfoAlumno"
+        android:layout_width="180dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Información del Alumno" />
 
     <TableRow
         android:layout_width="match_parent"
@@ -16,6 +25,7 @@
             android:id="@+id/txtViewInfoDialog1Alum"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:padding="10dp"
             android:text="Nombres:" />
 
@@ -33,6 +43,7 @@
             android:id="@+id/txtViewInfoDialog2Alum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="DNI:"
             android:padding="10dp"/>
 
@@ -49,6 +60,7 @@
         <TextView
             android:id="@+id/txtViewInfoDialog3Alum"
             android:layout_width="wrap_content"
+            android:textStyle="bold"
             android:layout_height="wrap_content"
             android:text="DNI del Padre:"
             android:padding="10dp"/>
@@ -63,6 +75,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
 
         <Button
             android:id="@+id/btnViewInfoDialogAlum_ok"
