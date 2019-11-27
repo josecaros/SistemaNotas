@@ -6,6 +6,7 @@
     <string name="editTextBusqueda">Nombre</string>
     <string name="btn_buscar">Buscar</string>
     <string name="IB">ImageButgra</string>
+    <string name="id_alumno">idAlumno</string>
 
 
     <string-array name="spinnerSem">

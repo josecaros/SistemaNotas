@@ -30,8 +30,9 @@
         android:textColor="@color/black"
         android:text="Seleccione uno de sus cursos:" />
 
-    <Spinner
+    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
         android:id="@+id/spinnerForCursosProfesor"
+        android:padding="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
