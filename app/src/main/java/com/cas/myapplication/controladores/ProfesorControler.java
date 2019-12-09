@@ -22,9 +22,7 @@ public class ProfesorControler {
     }
 
     public int registrarProfesor(Profesor profesor){
-        String id = profesores.push().getKey();
-        profesor.setIdProfesor(id);
-        profesores.child("Profesor").child(id).setValue(profesor);
+        profesores.child("Profesor").child(profesor.getDni()).setValue(profesor);
         return 100;
     }
 
@@ -49,7 +47,6 @@ public class ProfesorControler {
 
     public void actualizarProfesor(String id, Profesor profe){
         Profesor modificated = new Profesor();
-        modificated.setIdProfesor(id);
         modificated.setNombre(profe.getNombre());
         modificated.setApellidos(profe.getApellidos());
         modificated.setCorreo(profe.getCorreo());
@@ -57,7 +54,7 @@ public class ProfesorControler {
         modificated.setPassword(profe.getPassword());
         modificated.setTelefono(profe.getTelefono());
         modificated.setDni(profe.getDni());
-        profesores.child("Profesor").child(modificated.getIdProfesor()).setValue(modificated);
+        profesores.child("Profesor").child(modificated.getDni()).setValue(modificated);
     }
 
     public void eliminarProfesor(String id){

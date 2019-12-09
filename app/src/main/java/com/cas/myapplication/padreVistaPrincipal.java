@@ -20,17 +20,18 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
-public class padreVistaPrincipal extends AppCompatActivity {
-    AdaptadorListaAlumnosPadre alumnoAdapter;
+public class padreVistaPrincipal extends AppCompatActivity  {
+    AdaptadorListaAlumnos alumnoAdapter;
     List<Alumno> listaAlumno;
     ListView listView;
     private AlumnoControler alumnoControler = new AlumnoControler();
+    String idKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_padre_vista_principal);
-
+        idKey = getIntent().getStringExtra("ID");
         listView  = (ListView) findViewById(R.id.list_view_hijos);
 
         listaAlumno = alumnoControler.getAll();
@@ -43,6 +44,7 @@ public class padreVistaPrincipal extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent =  new Intent (padreVistaPrincipal.this, padreVistaHijo.class);
                 intent.putExtra("idAlumno",listaAlumno.get(position).getIdAlumno());
+                intent.putExtra("nombreAlumno",listaAlumno.get(position).getNombre()+" "+listaAlumno.get(position).getApellido());
                 startActivityForResult(intent, 3);
             }
         });
@@ -64,9 +66,11 @@ public class padreVistaPrincipal extends AppCompatActivity {
                 listaAlumno.clear();
                 for(DataSnapshot objtSnap: dataSnapshot.getChildren()){
                     Alumno aux = objtSnap.getValue(Alumno.class);
-                    listaAlumno.add(aux);
-                    alumnoAdapter = new AdaptadorListaAlumnosPadre(padreVistaPrincipal.this,R.id.list_view_hijos,listaAlumno);
-                    listView.setAdapter(alumnoAdapter);
+                    if(aux.getPadreId().equals(idKey)) {
+                        listaAlumno.add(aux);
+                        alumnoAdapter = new AdaptadorListaAlumnos(padreVistaPrincipal.this, R.id.list_view_hijos, listaAlumno);
+                        listView.setAdapter(alumnoAdapter);
+                    }
                 }
             }
             @Override

@@ -37,11 +37,11 @@ public class AdaptadorListaAlumnosPadre extends ArrayAdapter<Alumno> {
             convertView = layoutInflater.inflate(R.layout.row_hijo, parent, false);
         }
         final Alumno alumno = getItem(position);
-        TextView nombres = (TextView) convertView.findViewById(R.id.textViewHijoNombre);
+        //TextView nombres = (TextView) convertView.findViewById(R.id.textViewHijoNombre);
         TextView apellidos = (TextView) convertView.findViewById(R.id.textViewHijoApedllido);
         TextView edad = (TextView) convertView.findViewById(R.id.textViewHijoEdad);
 
-        nombres.setText((alumno.getNombre()));
+        //nombres.setText((alumno.getNombre()));
         apellidos.setText((alumno.getApellido()));
         edad.setText((alumno.getEdad()));
 

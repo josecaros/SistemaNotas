@@ -1,45 +1,71 @@
 package com.cas.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class padreVistaHijo extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-    Spinner spinnerMes, spinnerCurso;
-    ArrayAdapter<CharSequence> adapterM, adapterC;
+import com.cas.myapplication.controladores.MatriculaControler;
+import com.cas.myapplication.models.Matricula;
+import com.cas.myapplication.models.Profesor;
+import com.cas.myapplication.resources.alumno.AdaptadorListaNotasAlumnos;
+import com.cas.myapplication.resources.profesor.AdaptadorListaProfesores;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class padreVistaHijo extends AppCompatActivity {
+    ListView lista;
+    List<Matricula> matriculas;
+    AdaptadorListaNotasAlumnos adapter;
+    MatriculaControler control = new MatriculaControler();
+    TextView nombre;
+    String idKey;
+    String nombreAlumno;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_padre_vista_hijo);
-
-        spinnerMes = (Spinner) findViewById(R.id.spinnerMes);
-        spinnerCurso = (Spinner) findViewById(R.id.spinnerCurso);
-
-        adapterM = ArrayAdapter.createFromResource(this,R.array.spinnerSem,android.R.layout.simple_spinner_item);
-        adapterM.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerMes.setAdapter(adapterM);
-        spinnerMes.setOnItemSelectedListener(this);
-
-        adapterC = ArrayAdapter.createFromResource(this,R.array.spinnerSem,android.R.layout.simple_spinner_item);
-        adapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerCurso.setAdapter(adapterC);
-        spinnerCurso.setOnItemSelectedListener(this);
-
+        idKey= getIntent().getStringExtra("idAlumno");
+        nombreAlumno= getIntent().getStringExtra("nombreAlumno");
+        lista = findViewById(R.id.padreLista);
+        matriculas=new ArrayList<>();
+        nombre= findViewById(R.id.nombreAlumnoVistaPadre);
+        nombre.setText(nombreAlumno);
+        listarDatos();
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
+    private void listarDatos(){
+        control.getMatriculas().child("Matricula").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                matriculas.clear();
+                for(DataSnapshot objtSnap: dataSnapshot.getChildren()){
+                    Matricula aux = objtSnap.getValue(Matricula.class);
+                    if(aux.getIdAlumno().equals(idKey)){
+                        matriculas.add(aux);
+                        adapter = new AdaptadorListaNotasAlumnos(padreVistaHijo.this, R.layout.row_list_alumn_profesor, matriculas);
+                        lista.setAdapter(adapter);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
 }

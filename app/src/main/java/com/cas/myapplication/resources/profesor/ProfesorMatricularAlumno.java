@@ -29,7 +29,7 @@ public class ProfesorMatricularAlumno extends AppCompatActivity implements Liste
     List<Alumno> alumnos = new ArrayList<>();
     List<Curso> cursos = new ArrayList<>();
     Button matricular;
-    String proId= "-LtNU_7gPPWbQxnm0Zup";
+    String proId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class ProfesorMatricularAlumno extends AppCompatActivity implements Liste
         CursoControler controlCurso = new CursoControler();
         final AlumnoControler controlAlumno = new AlumnoControler();
         interConexion = this;
+        proId= getIntent().getStringExtra("ID");
 
         controlAlumno.getAlumnos().child("Alumno").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -62,7 +63,10 @@ public class ProfesorMatricularAlumno extends AppCompatActivity implements Liste
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 List<Curso> cur= new ArrayList<>();
                 for (DataSnapshot obs: dataSnapshot.getChildren()){
-                    cur.add(obs.getValue(Curso.class));
+                    Curso aux = obs.getValue(Curso.class);
+                    if(aux.getIdProfesor().equals(proId)){
+                        cur.add(aux);
+                    }
                 }
                 interConexion.onFirebaseLoadCorrectCurso(cur);
             }
@@ -80,8 +84,10 @@ public class ProfesorMatricularAlumno extends AppCompatActivity implements Liste
                 matri.setIdProfesor(proId);
                 matri.setIdAlumno(alumnos.get(alumSpinner.getSelectedItemPosition()).getIdAlumno());
                 matri.setIdCurso(cursos.get(cursSpinner.getSelectedItemPosition()).getIdCurso());
+                matri.setCurso(cursos.get(cursSpinner.getSelectedItemPosition()).getNombre());
                 matri.setNombreAlumno(alumnos.get(alumSpinner.getSelectedItemPosition()).getNombre()+
                         " "+alumnos.get(alumSpinner.getSelectedItemPosition()).getApellido());
+                matri.setIdNota(""+0);
                 MatriculaControler control = new MatriculaControler();
                 control.registrarMatricula(matri);
                 finish();

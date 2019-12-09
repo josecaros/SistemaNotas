@@ -16,6 +16,7 @@ public class Matricula {
     private String idAlumno;
     private String idMatricula;
     private String idNota;
+    private String curso;
 
     public Matricula(){}
 
@@ -57,5 +58,13 @@ public class Matricula {
 
     public void setIdNota(String idNota) {
         this.idNota = idNota;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 }

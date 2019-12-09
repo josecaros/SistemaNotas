@@ -63,5 +63,11 @@ public class DirectorControler {
         directores.child("Director").child(id).removeValue();
     }
 
+    public FirebaseDatabase getFirebaseDatabase() {
+        return firebaseDatabase;
+    }
 
+    public DatabaseReference getDirectores() {
+        return directores;
+    }
 }

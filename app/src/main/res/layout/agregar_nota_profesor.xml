@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="30dp">
+
+    <TextView
+        android:id="@+id/ActualizarNota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Actualizar Nota"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="30dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/actualizarNotaProfesor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="?attr/actionModePasteDrawable"
+            android:ems="10"
+            android:hint="Ingrese la Nota"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/actualizarNotaButtonOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aceptar"
+            android:layout_margin="10dp"
+            android:textSize="20dp"
+            android:padding="7dp"/>
+
+        <Button
+            android:id="@+id/actualizarNotaButtonCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:layout_margin="10dp"
+            android:textSize="15dp"
+            android:padding="7dp"/>
+
+    </LinearLayout>
+</LinearLayout>

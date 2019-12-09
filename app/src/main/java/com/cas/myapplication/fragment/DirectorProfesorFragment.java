@@ -114,7 +114,6 @@ public class DirectorProfesorFragment extends Fragment {
                     adapter = new AdaptadorListaProfesores(getContext(), R.id.list_view_profesores, profesores);
                     lista.setAdapter(adapter);
                 }
-                Log.i("tab","PRofesorFragmenaaaa3ssssProfesor");
             }
 
             @Override
@@ -131,7 +130,7 @@ public class DirectorProfesorFragment extends Fragment {
                 setPositiveButton("Si", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        profesorControler.eliminarProfesor(profesor.getIdProfesor());
+                        profesorControler.eliminarProfesor(profesor.getDni());
                         Toast.makeText(getActivity(), "Item Eliminado", Toast.LENGTH_SHORT);
                         adapter.notifyDataSetChanged();
                     }

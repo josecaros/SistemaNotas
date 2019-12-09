@@ -22,6 +22,8 @@ import com.cas.myapplication.models.Alumno;
 import com.cas.myapplication.models.Curso;
 import com.cas.myapplication.models.Matricula;
 import com.cas.myapplication.resources.alumno.AdaptadorListaAlumnos;
+import com.cas.myapplication.resources.alumno.AdaptadorListaNotasAlumnos;
+import com.cas.myapplication.resources.profesor.ActualizarRegistroNota;
 import com.cas.myapplication.resources.profesor.CursoListener;
 import com.cas.myapplication.resources.profesor.ProfesorMatricularAlumno;
 import com.google.firebase.database.DataSnapshot;
@@ -44,12 +46,16 @@ public class profesorVistaPrincipal extends AppCompatActivity implements CursoLi
     boolean first=true;
     AlumnoControler alumnoControler =new AlumnoControler();
     AdaptadorListaAlumnos adapter;
+    String idKey;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profesor_vista_principal);
         toolbar= findViewById(R.id.myToolbarProfesor);
         setSupportActionBar(toolbar);
+        idKey = getIntent().getStringExtra("ID");
+
         listenerC=this;
         cursosSpinner = (SearchableSpinner) findViewById(R.id.spinnerForCursosProfesor);
         lista = (ListView) findViewById(R.id.listaAlumnosCursosMatriculaldos);
@@ -59,7 +65,10 @@ public class profesorVistaPrincipal extends AppCompatActivity implements CursoLi
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 List<Curso> cur= new ArrayList<>();
                 for (DataSnapshot obs: dataSnapshot.getChildren()){
-                    cur.add(obs.getValue(Curso.class));
+                    Curso aux =obs.getValue(Curso.class);
+                    if(aux.getIdProfesor().equals(idKey)){
+                        cur.add(aux);
+                    }
                 }
                 listenerC.loadSucessfull(cur);
             }
@@ -76,9 +85,10 @@ public class profesorVistaPrincipal extends AppCompatActivity implements CursoLi
                     final Curso curso = cursos.get(position);
                     final List<Matricula> matriculados= new ArrayList<>();
                     MatriculaControler controlM = new MatriculaControler();
-                    controlM.getMatriculas().child("Matricula").addListenerForSingleValueEvent(new ValueEventListener() {
+                    controlM.getMatriculas().child("Matricula").addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            matricula.clear();
                             for(DataSnapshot objss : dataSnapshot.getChildren()){
                                 Matricula matr = objss.getValue(Matricula.class);
                                 if(matr.getIdCurso().equals(curso.getIdCurso())){
@@ -103,6 +113,14 @@ public class profesorVistaPrincipal extends AppCompatActivity implements CursoLi
 
             }
         });
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ActualizarRegistroNota nota = new ActualizarRegistroNota((Matricula) lista.getItemAtPosition(position));
+                nota.show(getSupportFragmentManager(),"Actualizar Nota");
+            }
+        });
     }
 
 
@@ -118,6 +136,7 @@ public class profesorVistaPrincipal extends AppCompatActivity implements CursoLi
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId()==R.id.matricularAñumno){
             Intent intent = new Intent (this, ProfesorMatricularAlumno.class);
+            intent.putExtra("ID",idKey);
             startActivityForResult(intent, 1);
             return true;
         }
@@ -142,13 +161,7 @@ public class profesorVistaPrincipal extends AppCompatActivity implements CursoLi
     @Override
     public void loadSucessfullMatricula(List<Matricula> matriculaList) {
         matricula=matriculaList;
-        ArrayList<String > nombre  = new ArrayList<>();
-        for(Matricula mat:matricula){
-            Log.i("matricula",mat.getIdCurso()+ " " +mat.getIdAlumno());
-            nombre.add(mat.getNombreAlumno());
-        }
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,nombre);
+        AdaptadorListaNotasAlumnos adapter = new AdaptadorListaNotasAlumnos(this,R.layout.row_list_alumn_profesor,matricula);
         lista.setAdapter(adapter);
-
     }
 }

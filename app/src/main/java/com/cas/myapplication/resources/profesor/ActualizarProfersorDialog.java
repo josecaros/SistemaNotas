@@ -62,7 +62,7 @@ public class ActualizarProfersorDialog extends DialogFragment {
                 nuevo.setDireccion(direccion.getText().toString());
                 nuevo.setDni(dni.getText().toString());
                 nuevo.setPassword(password.getText().toString());
-                control.actualizarProfesor(profesor.getIdProfesor(),nuevo);
+                control.actualizarProfesor(profesor.getDni(),nuevo);
                 getDialog().dismiss();
             }
         });

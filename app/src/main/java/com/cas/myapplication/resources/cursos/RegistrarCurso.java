@@ -16,7 +16,7 @@ import com.cas.myapplication.models.Profesor;
 
 public class RegistrarCurso extends AppCompatActivity {
     private Button btn_agregar, btn_cancelar;
-    private EditText nombre, descri;
+    private EditText nombre, descri,profesor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class RegistrarCurso extends AppCompatActivity {
                 Curso nuevoCurso = new Curso();
                 nuevoCurso.setNombre(nombre.getText().toString());
                 nuevoCurso.setDescripcion(descri.getText().toString());
+                nuevoCurso.setIdProfesor(profesor.getText().toString());
                 controler.registrarCurso(nuevoCurso);
                 Intent intent=new Intent();
                 intent.putExtra("MESSAGE","MESSAGE");
@@ -51,5 +52,6 @@ public class RegistrarCurso extends AppCompatActivity {
         btn_cancelar=(Button) findViewById(R.id.btnRegCurs_cancelar);
         nombre = (EditText) findViewById(R.id.txtEdiRegCurs_nombre);
         descri = (EditText) findViewById(R.id.txtEdiRegCurso_Descri);
+        profesor= (EditText) findViewById(R.id.txtEdiRegCurso_Profesor);
     }
 }

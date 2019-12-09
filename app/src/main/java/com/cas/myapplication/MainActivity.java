@@ -5,45 +5,50 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cas.myapplication.resources.RegistrarDirector;
+import com.cas.myapplication.resources.login.InicioSesionDialog;
+import com.cas.myapplication.resources.login.InicioSesionDialogPadre;
+import com.cas.myapplication.resources.profesor.ActualizarProfersorDialog;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnLogin, aux, padre;
+    private Button btnLoginDirector, btnLoginProfesor, btnLoginPadre;
     TextView reg_Director, forgot_Pass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        forgot_Pass=findViewById(R.id.forgotPassword);
+        forgot_Pass.setMovementMethod(LinkMovementMethod.getInstance());
 
-        btnLogin = (Button) findViewById(R.id.btn_login);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        btnLoginDirector = (Button) findViewById(R.id.botonLoginDirector);
+        btnLoginDirector.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, directorVistaPrincipal.class);
-                startActivityForResult(intent,0);
+                InicioSesionDialog inicio  = new InicioSesionDialog(0);
+                inicio.show(getSupportFragmentManager(),"InicioSesion");
             }
         });
 
-        aux = (Button) findViewById(R.id.botonTemporal);
-        aux.setOnClickListener(new View.OnClickListener() {
+        btnLoginProfesor = (Button) findViewById(R.id.botonLoginProfesor);
+        btnLoginProfesor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), profesorVistaPrincipal.class);
-                startActivityForResult(intent, 1);
+                InicioSesionDialog inicio  = new InicioSesionDialog(1);
+                inicio.show(getSupportFragmentManager(),"InicioSesion");
             }
         });
-        padre = (Button) findViewById(R.id.botonPadre);
-        padre.setOnClickListener(new View.OnClickListener() {
+        btnLoginPadre = (Button) findViewById(R.id.botonLoginPadre);
+        btnLoginPadre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), padreVistaPrincipal.class);
-                startActivityForResult(intent, 2);
+                InicioSesionDialogPadre inicio  = new InicioSesionDialogPadre();
+                inicio.show(getSupportFragmentManager(),"InicioSesion");
             }
         });
 

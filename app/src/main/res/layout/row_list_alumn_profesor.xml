@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/matriAluImage"
+            android:layout_width="60dp"
+            android:layout_height="58dp"
+            android:src="@drawable/icon_user" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/matriAluNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/matriAluCurso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Curso"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/matriAluNota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nota"
+                android:textColor="@color/black"
+                android:textStyle="italic|bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

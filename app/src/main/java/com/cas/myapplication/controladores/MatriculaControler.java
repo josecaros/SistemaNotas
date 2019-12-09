@@ -20,7 +20,7 @@ public class MatriculaControler {
         return 100;
     }
 
-    public void actualizarPadre(String id, Matricula matricula){
+    public void actualizarMatricula(String id, Matricula matricula){
         Matricula modificated = new Matricula();
         modificated.setIdMatricula(id);
         modificated.setIdCurso(matricula.getIdCurso());
@@ -28,6 +28,7 @@ public class MatriculaControler {
         modificated.setIdProfesor(matricula.getIdProfesor());
         modificated.setIdNota(matricula.getIdNota());
         modificated.setNombreAlumno(matricula.getNombreAlumno());
+        modificated.setCurso(matricula.getCurso());
         matriculas.child("Matricula").child(modificated.getIdMatricula()).setValue(modificated);
     }
 

@@ -5,17 +5,15 @@ public class Profesor {
     String apellidos;
     String telefono;
     String correo;
-    String idProfesor;
     String password;
     String direccion;
     String dni;
 
-    public Profesor(String nombre, String apellidos, String telefono, String correo, String idProfesor, String password, String direccion, String dni) {
+    public Profesor(String nombre, String apellidos, String telefono, String correo, String password, String direccion, String dni) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.telefono = telefono;
         this.correo = correo;
-        this.idProfesor = idProfesor;
         this.password = password;
         this.direccion = direccion;
         this.dni=dni;
@@ -63,14 +61,6 @@ public class Profesor {
 
     public void setCorreo(String correo) {
         this.correo = correo;
-    }
-
-    public String getIdProfesor() {
-        return idProfesor;
-    }
-
-    public void setIdProfesor(String idProfesor) {
-        this.idProfesor = idProfesor;
     }
 
     public String getPassword() {
