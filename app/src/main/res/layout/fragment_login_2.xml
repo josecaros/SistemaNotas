@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Ingrese su DNI"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:drawableLeft="@drawable/user"/>
     </LinearLayout>
 

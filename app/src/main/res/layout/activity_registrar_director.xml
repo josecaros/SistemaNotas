@@ -104,7 +104,7 @@
                     android:layout_weight="3"
                     android:ems="10"
                     android:layout_marginRight="12dp"
-                    android:inputType="textPersonName"
+                    android:inputType="textPassword"
                     android:text=""  />
 
             </LinearLayout>
@@ -132,7 +132,7 @@
                     android:layout_weight="3"
                     android:ems="10"
                     android:layout_marginRight="12dp"
-                    android:inputType="textPersonName"
+                    android:inputType="textEmailAddress"
                     android:text=""  />
             </LinearLayout>
 
@@ -186,7 +186,7 @@
                     android:layout_weight="3"
                     android:ems="10"
                     android:layout_marginRight="12dp"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:text=""  />
             </LinearLayout>
 

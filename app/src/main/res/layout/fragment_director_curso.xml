@@ -24,28 +24,6 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/edit_text_busquedaCurso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Buscar.."
-            android:inputType="textPersonName" />
-
-        <ImageButton
-            android:id="@+id/btn_searchCurso"
-            android:layout_width="50dp"
-            android:layout_height="56dp"
-            android:layout_weight="1"
-            android:src="@android:drawable/ic_search_category_default"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"

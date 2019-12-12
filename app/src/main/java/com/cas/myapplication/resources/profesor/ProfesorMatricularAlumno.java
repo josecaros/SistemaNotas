@@ -112,7 +112,7 @@ public class ProfesorMatricularAlumno extends AppCompatActivity implements Liste
         alumnos=alumnoList;
         List<String> nombres = new ArrayList<>();
         for(Alumno alumno:alumnos){
-            nombres.add(alumno.getIdAlumno());
+            nombres.add(alumno.getNombre()+" "+alumno.getApellido());
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,nombres);
         alumSpinner.setAdapter(adapter);
